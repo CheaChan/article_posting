@@ -6,7 +6,7 @@
   <div class="col-md-10">
    <div class="card">
     <div class="card-header">
-     Create Category
+     Create Category  
     </div>
     <div class="card-body">
      <form action="{{ url('admin/category/store') }}/{{ isset($object) ? $object->id : 0}}" method="POST" enctype='multipart/form-data'>

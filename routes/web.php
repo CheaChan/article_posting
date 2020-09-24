@@ -17,22 +17,13 @@ Route::get('/', 'ArticleController@allArticles');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'DashboardController@index');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 // User List
 Route::prefix('admin')->group(function () {
+    // dashboard
+    Route::get('/dashboard', 'DashboardController@index');
 
     Route::get('/users/create', 'User\UserController@create')->name('users/create');
     Route::get('/users/show/{id?}', 'User\UserController@show')->name('users/show');
