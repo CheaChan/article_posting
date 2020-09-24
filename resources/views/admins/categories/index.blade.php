@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
+<div class="">
+    <div class=" justify-content-center">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Categories List
@@ -14,7 +14,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <table class="table">
+                    <table id="categories" class="table">
                         <thead class="thead-dark">
                           <tr>
                             <th scope="col">#</th>

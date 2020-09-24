@@ -195,7 +195,7 @@
   <!-- /.content-wrapper -->
   {{--  Footer  --}}
   @if(Auth::user())
-  @include('layouts.footer')
+    @include('layouts.footer')
   @endif
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -245,15 +245,9 @@
 <!-- page script -->
 <script>
   $(function () {
-    $("#example1").DataTable();
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-    });
+    $("#users").DataTable();
+    $('#categories').DataTable();
+    $('#articles').DataTable();
   });
 </script>
 </body>

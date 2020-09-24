@@ -16,7 +16,9 @@ class UserController extends Controller
      */
     public function index()
     {
-
+        $data['users'] = User::get();
+        
+        return view('users.home')->with($data);
     }
 
     /**
