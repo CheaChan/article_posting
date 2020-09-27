@@ -31,11 +31,35 @@
  </div>
  <div class="row">
   <div class="col-md-2"></div>
+   <div class="col-md-8">
+     {{--  {{ url()->current() }}  --}}
+     <div class="btn-group">
+       <div class="text-nowrap">
+         <div id="fb-root"></div>
+         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0&appId=2488896414478775&autoLogAppEvents=1" nonce="TtHGXdEv"></script>
+         <div class="fb-share-button"  style="margin-bottom: 20px;" data-href="https://laravel.com/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div><br>
+         <script async src="https://telegram.org/js/telegram-widget.js?11" data-telegram-share-url="https://laravel.com/" data-size="large"></script>  
+       </div>
+     </div>
+   </div>
+   <div class="col-md-2"></div>
+ </div>
+ <div class="row">
+  <div class="col-md-2"></div>
   <div class="col-md-8">
    <p>{{$get_article_detail->content}}</p>
    <p>{{$get_article_detail->description}}</p>
   </div>
   <div class="col-md-2"></div>
+ </div>
+ <div class="row">
+   <div class="col-md-2"></div>
+   <div class="col-md-8">
+    <iframe width="100%" height="415"
+    src="https://www.youtube.com/embed/tgbNymZ7vqY">
+    </iframe>
+   </div>
+   <div class="col-md-2"></div>
  </div>
 </section>
 <div class="card-footer text-muted">

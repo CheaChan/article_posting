@@ -37,8 +37,12 @@
                             <td>{{$record->created_at}}</td>
                             <td>{{$record->updated_at}}</td>
                             <td>
-                              <a class="btn btn-danger" href="{{url('admin/category/delete').'/'.$record->id}}">Delete</a>
-                              <a class="btn btn-dark" href="{{url('admin/category/show').'/'.$record->id}}">Update</a>
+                              <div class="btn-group">
+                                <div class="text-nowrap">
+                                  <a class="btn btn-danger" href="{{url('admin/category/delete').'/'.$record->id}}"><i class="fas fa-trash-alt"></i> </a>
+                                  <a class="btn btn-dark" href="{{url('admin/category/show').'/'.$record->id}}"><i class="fas fa-edit"></i> </a>
+                                </div>
+                              </div>
                             </td>
                           </tr>
                           @endforeach
