@@ -32,7 +32,7 @@
        </div>
        <div class="form-group">
         <label for="exampleInputEmail1">Description</label>
-        <textarea class="form-control" name="description" id="" cols="30" rows="6" placeholder="Enter Description">{{isset($object) ? $object->description : ''}}</textarea>
+        <textarea class="form-control" name="description" id="summernote" cols="30" rows="6" placeholder="Enter Description">{{isset($object) ? $object->description : ''}}</textarea>
         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
       </div>
       <div class="form-group" style="padding-bottom: 15px">                            

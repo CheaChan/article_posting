@@ -150,6 +150,8 @@
   <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  {{--  sommernote  --}}
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet"> 
 </head>
 {{--  body  --}}
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -243,11 +245,16 @@
 <script src="{{ asset('plugins/datatables/jquery.dataTables.js') }}"></script>
 <script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
 <!-- page script -->
+<!-- include summernote css/js -->
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script>
   $(function () {
     $("#users").DataTable();
     $('#categories').DataTable();
     $('#articles').DataTable();
+  });
+  $(document).ready(function() {
+    $('#summernote').summernote();
   });
 </script>
 </body>

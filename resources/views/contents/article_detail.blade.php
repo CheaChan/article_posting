@@ -48,7 +48,7 @@
   <div class="col-md-2"></div>
   <div class="col-md-8">
    <p>{{$get_article_detail->content}}</p>
-   <p>{{$get_article_detail->description}}</p>
+   <p>{!!$get_article_detail->description!!}</p>
   </div>
   <div class="col-md-2"></div>
  </div>
