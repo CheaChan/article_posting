@@ -18,7 +18,7 @@
                           <tr>
                             <th scope="col">#</th>
                             <th scope="col">Title</th>
-                            <th scope="col">Description</th>
+                            <th scope="col">Created At</th>
                             <th scope="col">Category</th>
                             <th scope="col">Publised At</th>
                             <th scope="col">Action</th>
@@ -32,7 +32,7 @@
                           <tr>
                             <th scope="row">{{ $loop->iteration }}</th>
                             <td>{{$record->title}}</td>
-                            <td>{{$record->description}}</td>
+                            <td>{{$record->created_at}}</td>
                             <td>{{$record->categories->title}}</td>
                             <td>{{$record->published_at}}</td>
                             <td>
