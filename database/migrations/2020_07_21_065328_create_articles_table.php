@@ -18,12 +18,16 @@ class CreateArticlesTable extends Migration
             $table->date('published_at');
             $table->string('slug');
             $table->string('title');
-            $table->string('description');
-            $table->text('content');
+            // $table->string('description');
+            $table->longText('content');
+            $table->bigInteger('amount_viewer');
+            $table->text('video_link');
             $table->timestamps();
             $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('user_id');
 
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

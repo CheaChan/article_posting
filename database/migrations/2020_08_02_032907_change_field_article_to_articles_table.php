@@ -14,9 +14,9 @@ class ChangeFieldArticleToArticlesTable extends Migration
     public function up()
     {
         Schema::table('articles', function (Blueprint $table) {
-            Schema::table('articles', function (Blueprint $table) {
-                $table->longText('description')->change();
-            });
+            // Schema::table('articles', function (Blueprint $table) {
+            //     $table->longText('description')->change();
+            // });
         });
     }
 

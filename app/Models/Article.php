@@ -12,7 +12,7 @@ class Article extends Model
      * @var array
      */
     protected $fillable = [
-        'slug', 'title', 'description', 'published_at', 'category_id', 'content'
+        'slug', 'title', 'published_at', 'category_id', 'content'
     ];
 
     public function categories()
@@ -28,5 +28,5 @@ class Article extends Model
     {
         return $this->hasMany('App\Models\ArticlePhoto', 'article_id');
     }
-    
+
 }

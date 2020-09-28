@@ -10,10 +10,13 @@ $data = $factory->define(Article::class, function (Faker $faker) {
     $max = 4;
     return [
         'title' => $faker->sentence($nbWords = 6, $variableNbWords = true),
-        'description' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
+        // 'description' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         'content' => $faker->text($maxNbChars = 1000),
+        'amount_viewer' => rand(100, 1000),
+        'video_link' => 'https://www.youtube.com/watch?v=VQidjsNfe8c',
         'slug' => $faker->slug(),
         'category_id' => rand($min, $max),
+        'user_id' => rand(1,2),
         'published_at' => $faker->dateTime($max = 'now', $timezone = null)
     ];
 });
