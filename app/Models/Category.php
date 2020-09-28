@@ -12,6 +12,10 @@ class Category extends Model
      * @var array
      */
     protected $fillable = [
-        'slug', 'title', 'description'
+        'slug', 'title'
     ];
+    public function articles()
+    {
+        return $this->hasMany('App/Models/Article', 'category_id');
+    }
 }
