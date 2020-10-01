@@ -17,4 +17,22 @@ class Controller extends BaseController
         $data = Category::get();
         return $data;
     }
+
+    // Success message
+    public function responseSuccess($message, $data, $code)
+    {
+        return [
+            'message' => $message,
+            'Response' => $code,
+            'data' => $data,
+        ];
+    }
+    // Error message
+    public function responseError($message, $code)
+    {
+        return [
+            'message' => $message,
+            'Response' => $code,
+        ];
+    }
 }

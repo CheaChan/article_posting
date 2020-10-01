@@ -17,3 +17,21 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+/**
+ * Prefix APIs Version 0
+ */
+Route::post('v0/oauth/register_grant_client', 'Auth\BasicAuthController@register_grant_client')->name('oauth/register_grant_client');
+Route::group(['prefix' => 'v0'], function () {
+    Route::post('/oauth/authorize', 'Auth\BasicAuthController@login')->name('oauth/authorize');
+});
+Route::group([
+    'middleware' => 'api_key'
+], function() {
+    Route::get('user', 'Auth\BasicAuthController@user');
+});
+
+Route::group(['prefix' => 'v0', 'middleware' => ['api_key']], function () {
+    Route::get('test', function() {
+    });
+});
