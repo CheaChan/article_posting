@@ -2,41 +2,49 @@
 
 @section('content1')
 <div class="container">
-    <div class="row justify-content-md-center">
-        <div class="col-md-8">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Sports</a>
-                  </li>
-            </ul>
+  <div class="row">
+      <div class="col-sm-8">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Sports</a>
+          </li>
+        </ul>
+        <div class="row">
+        @foreach ($sports as $item)
+          <div class="col-md-6">
+              <a style="text-decoration:none" href="{{url('view/article/detail/'.$item->id)}}">
+              <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <img src="{{asset($item->articlePhotoFisrt[0]->path)}}" class="img-fluid image-resolution" alt="Responsive image">
+                      </div>
+                      <div class="col-md-12">
+                          <h5 class="card-title">{{ $item->title}}</h5>
+                          <hr>
+                          <p><span class="fa fa-calendar"></span></span> {{$item->published_at}}</p>
+                          <p class="card-text">{{ \Illuminate\Support\Str::limit($item->description, 80) }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
         </div>
-    </div>
- @foreach ($sports as $item)
- <div class="row justify-content-md-center">
-    <div class="col-md-8">
-        <a style="text-decoration:none" href="{{url('view/article/detail/'.$item->id)}}">
-         <div class="card">
-             <div class="card-body">
-               <div class="row">
-                <div class="col-md-5">
-                  <img src="{{asset($item->articlePhotoFisrt[0]->path)}}" class="img-fluid image-resolution" alt="Responsive image">
-                </div>
-                <div class="col-md-7">
-                    <h3 class="card-title">{{ $item->title}}</h3>
-                    <hr>
-                    <h5>{{$item->published_at}}</h5>
-                    <p class="card-text">{{ $item->description}}</p>
-                </div>
-               </div>
-             </div>
-           </div>
-        </a>
-    </div>
- </div>
-  @endforeach
-  <br>
-  <div class="text-center">
-  <span class="">{{ $sports->links() }}</span>
+        @endforeach
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Download</a>
+          </li>
+        </ul>
+          <!-- Data second column  -->
+      </div>
   </div>
+<br>
+<div class="text-center">
+ <span class="">{{ $sports->links() }}</span>
+</div>
 </div>
 @endsection
