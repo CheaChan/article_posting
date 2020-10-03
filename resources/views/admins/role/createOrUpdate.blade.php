@@ -3,7 +3,7 @@
 @section('content')
  <div class="container">
   <div class="row justify-content-center">
-  <div class="col-md-12">
+  <div class="col-md-6">
    <div class="card">
     <div class="card-header">
      Create User
@@ -35,7 +35,7 @@
         <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
-      <a class="btn btn-danger" role="button" href="{{url('admin/users/lists')}}">Back</a>
+      <a class="btn btn-danger" role="button" href="{{url('home')}}">Back</a>
     </form>
     </div>
    </div>

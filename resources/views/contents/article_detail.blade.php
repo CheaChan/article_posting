@@ -47,17 +47,14 @@
  <div class="row">
   <div class="col-md-2"></div>
   <div class="col-md-8">
-   <p>{{$get_article_detail->content}}</p>
-   <p>{!!$get_article_detail->description!!}</p>
+   <p>{!!$get_article_detail->content!!}</p>
   </div>
   <div class="col-md-2"></div>
  </div>
  <div class="row">
    <div class="col-md-2"></div>
    <div class="col-md-8">
-    <iframe width="100%" height="415"
-    src="https://www.youtube.com/embed/tgbNymZ7vqY">
-    </iframe>
+    <iframe width="100%" height="415" src="https://www.youtube.com/embed/A6XUVjK9W4o" frameborder="0" allowfullscreen></iframe>
    </div>
    <div class="col-md-2"></div>
  </div>

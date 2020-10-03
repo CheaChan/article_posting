@@ -31,7 +31,7 @@
            </p>
          </a>
        </li>
-       <li class="nav-item">
+       {{-- <li class="nav-item">
          <a href="pages/widgets.html" class="nav-link">
            <i class="nav-icon fas fa-th"></i>
            <p>
@@ -39,7 +39,7 @@
              <span class="right badge badge-danger">New</span>
            </p> 
          </a>
-       </li>
+       </li> --}}
        <li class="nav-item has-treeview">
          <a href="#" class="nav-link">
            <i class="nav-icon fas fa-chart-pie"></i>
@@ -59,29 +59,6 @@
             <a class="nav-link" href="{{url('admin/articles/create')}}">
                <i class="far fa-circle nav-icon"></i>
                <p>Create Acticle</p>
-             </a>
-           </li>
-         </ul>
-       </li>
-       <li class="nav-item has-treeview">
-         <a href="#" class="nav-link">
-           <i class="nav-icon fas fa-tree"></i>
-           <p>
-             UI Elements
-             <i class="fas fa-angle-left right"></i>
-           </p>
-         </a>
-         <ul class="nav nav-treeview">
-           <li class="nav-item">
-             <a href="pages/UI/general.html" class="nav-link">
-               <i class="far fa-circle nav-icon"></i>
-               <p>General</p>
-             </a>
-           </li>
-           <li class="nav-item">
-             <a href="pages/UI/sliders.html" class="nav-link">
-               <i class="far fa-circle nav-icon"></i>
-               <p>Sliders</p>
              </a>
            </li>
          </ul>
@@ -134,7 +111,7 @@
       </li>
        </li>
        <li class="nav-item">
-        <a href="{{ url('admin/users/lists') }}" class="nav-link">
+        <a href="{{ url('admin/role/lists') }}" class="nav-link">
           <i class="nav-icon fas fa-user"></i>
           <p>
             User Role

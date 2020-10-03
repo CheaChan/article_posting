@@ -7,6 +7,7 @@ use App\Models\ArticlePhoto;
 use App\Models\Category;
 use Carbon\Traits\Date;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
@@ -44,11 +45,13 @@ class ArticleController extends Controller
     {
         $data = [
             'title' => $request->title,
-            'description' => $request->description,
             'content' => $request->content,
             'published_at' => date('Y-m-d'),
             'slug' => 'slug_name',
-            'category_id' => $request->category_id
+            'category_id' => $request->category_id,
+            'amount_viewer' => 0,
+            'video_link' => $request->video_link == '' ? '0' : $request->video_link,
+            'user_id' => Auth::user()->id,
         ];
 
         $createOrUpdate = Article::updateOrCreate(['id' => $id], $data);

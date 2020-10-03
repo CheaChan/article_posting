@@ -42,6 +42,8 @@ Route::prefix('admin')->group(function () {
     Route::post('/articles/store/{id?}', 'ArticleController@store')->name('articles/store');
     Route::get('/articles/delete/{id?}', 'ArticleController@destroy')->name('articles/delete');
     // content
+    // Role
+    Route::get('/role/lists', 'RoleController@index')->name('role/lists');
 });
 
 
