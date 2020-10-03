@@ -16,7 +16,7 @@
         <select name="category_id" class="form-control" required>
             <option value=""> -- Please Select --</option>
                 @foreach ($categories as $category)
-                    <option name="category_id" value="{{$category->id}}" {{ isset($object) ? ($object->category_id == $category->id ? 'selected': ''): ''}}>{{ $category->title }}</option>   
+                    <option name="category_id" value="{{$category->id}}" {{ isset($object) ? ($object->category_id == $category->id ? 'selected': ''): ''}}>{{ $category->title }}</option>
                 @endforeach
         </select>
       </div>
@@ -40,7 +40,7 @@
         <input type="url" class="form-control" name="video_link" value="{{isset($object) ? $object->video_link : ''}}" aria-describedby="emailHelp" placeholder="Enter video link" required>
         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
       </div>
-      <div class="form-group" style="padding-bottom: 15px">                            
+      <div class="form-group" style="padding-bottom: 15px">
         <label class="col-lg-3">Upload</label>
         <input class="btn btn-primary"  type="file" name="files[]" required> <br/>
       </div>

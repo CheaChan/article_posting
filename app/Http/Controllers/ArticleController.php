@@ -19,7 +19,7 @@ class ArticleController extends Controller
     public function index()
     {
         $data['articles'] = Article::with('categories')->orderBy('id', 'desc')->get();
-        
+
         return view('admins.articles.index')->with($data);
     }
 
@@ -27,11 +27,11 @@ class ArticleController extends Controller
     public function published()
     {
         $data['articles'] = Article::with('categories')->where('status', '1')->orderBy('id', 'desc')->get();
-        
+
         return view('admins.articles_published.index')->with($data);
     }
 
-    // Publish 
+    // Publish
     public function makePubish($id = 0)
     {
         $make_publish = Article::where('id', $id)
@@ -39,7 +39,7 @@ class ArticleController extends Controller
             'status' => '1',
             'published_at' => date('Y-m-d'),
         ]);
-        
+
         return redirect('admin/articles')->with('success', 'The article has been published successfully!');
     }
 
@@ -97,9 +97,9 @@ class ArticleController extends Controller
         else:
                 $image = '';
         endif;
-        
 
-        return redirect('admin/articles');
+
+        return redirect('admin/articles')->with('success','Article '.($id != '0'? 'Updated' : 'Created') .' successfully!');;
     }
 
     /**
@@ -149,17 +149,17 @@ class ArticleController extends Controller
         $detete = Article::where('id', $request->id)->delete();
         if($detete) {
             $request->session()->flash('success', 'Data has been deleted!');
-            return redirect('admin/articles');  
+            return redirect('admin/articles');
         }else {
             $request->session()->flash('error','Fail to save data, please check again!');
-            return redirect('admin/articles'); 
+            return redirect('admin/articles');
         }
     }
 
     public function allArticles()
     {
         $data['all_articles'] = Article::with('articlePhotoFisrt')->where('status', '1')->orderBy('id', 'desc')->paginate(10);
-        
+
         return view('contents.all_articles')->with($data);
     }
 
