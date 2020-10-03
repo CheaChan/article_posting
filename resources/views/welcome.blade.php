@@ -86,16 +86,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="{{url('articles/entertainment')}}">Entertainments</a>
+                  <a class="nav-link" href="{{url('articles/entertainments')}}">Entertainments</a>
                 </li>
                 <li class="nav-item active">
                   <a class="nav-link" href="{{url('articles/sports')}}">Sports</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{url('articles/technology')}}">Technologies</a>
+                    <a class="nav-link" href="{{url('articles/technologies')}}">Technologies</a>
                 </li>
                     <li class="nav-item active">
-                    <a class="nav-link" href="{{url('articles/social')}}">Socials</a>
+                    <a class="nav-link" href="{{url('articles/socials')}}">Socials</a>
                 </li>
               </ul>
             </div>

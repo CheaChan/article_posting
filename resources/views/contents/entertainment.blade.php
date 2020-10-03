@@ -10,7 +10,7 @@
           </li>
         </ul>
         <div class="row">
-                @foreach ($entertainments as $item)
+                @foreach ($articlelists as $item)
                     <div class="col-md-6">
                     <a style="text-decoration:none" href="{{url('view/article/detail/'.$item->id)}}">
                     <div class="card">
@@ -43,7 +43,8 @@
   </div>
 <br>
 <div class="text-center">
- <span class="">{{ $entertainments->links() }}</span>
+ <span class="">{{ $articlelists->links() }}</span>
 </div>
 </div>
 @endsection
+@extends('footer')

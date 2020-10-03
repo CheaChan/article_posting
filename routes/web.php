@@ -38,7 +38,7 @@ Route::prefix('admin')->group(function () {
     ////
     Route::get('/articles/published', 'ArticleController@published')->name('articles/published');
     Route::get('/articles/publish/{id?}', 'ArticleController@makePubish')->name('admin/articles/publish');
-    
+
     Route::get('/articles', 'ArticleController@index')->name('articles');
     Route::get('/articles/create', 'ArticleController@create')->name('articles/create');
     Route::get('/articles/show/{id?}', 'ArticleController@show')->name('articles/show');
@@ -51,10 +51,10 @@ Route::prefix('admin')->group(function () {
 
 
 Route::get('/all/articles', 'ArticleController@allArticles')->name('/');
-Route::get('/articles/entertainment', 'ArticleController@entertainment')->name('articles/entertainment');
+Route::get('/articles/entertainments', 'ArticleController@entertainment')->name('articles/entertainments');
 Route::get('/articles/sports', 'ArticleController@sports')->name('articles/sports');
-Route::get('/articles/technology', 'ArticleController@technology')->name('articles/technology');
-Route::get('/articles/social', 'ArticleController@social')->name('articles/social');
+Route::get('/articles/technologies', 'ArticleController@technology')->name('articles/technologies');
+Route::get('/articles/socials', 'ArticleController@social')->name('articles/socials');
 
 // view detail
 

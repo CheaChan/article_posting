@@ -158,33 +158,32 @@ class ArticleController extends Controller
 
     public function allArticles()
     {
-        $data['all_articles'] = Article::with('articlePhotoFisrt')->where('status', '1')->orderBy('id', 'desc')->paginate(10);
-
-        return view('contents.all_articles')->with($data);
+        $data['articlelists'] = Article::where('category_id', 1)->where('status', '1')->orderBy('id', 'desc')->with('articlePhotoFisrt','articleWriter')->paginate(10);
+        return view('contents.entertainment')->with($data);
     }
 
     public function entertainment()
     {
-        $data['entertainments'] = Article::where('category_id', 1)->where('status', '1')->orderBy('id', 'desc')->with('articlePhotoFisrt','articleWriter')->paginate(10);
+        $data['articlelists'] = Article::where('category_id', 1)->where('status', '1')->orderBy('id', 'desc')->with('articlePhotoFisrt','articleWriter')->paginate(10);
         return view('contents.entertainment')->with($data);
     }
 
     public function sports()
     {
-        $data['sports'] = Article::where('category_id', 2)->where('status', '1')->orderBy('id', 'desc')->with('articlePhotoFisrt')->paginate(10);
-        return view('contents.sport')->with($data);
+        $data['articlelists'] = Article::where('category_id', 1)->where('status', '1')->orderBy('id', 'desc')->with('articlePhotoFisrt','articleWriter')->paginate(10);
+        return view('contents.entertainment')->with($data);
     }
 
     public function technology()
     {
-        $data['technologies'] = Article::where('category_id', 3)->where('status', '1')->orderBy('id', 'desc')->with('articlePhotoFisrt')->paginate(10);
-        return view('contents.technology')->with($data);
+        $data['articlelists'] = Article::where('category_id', 1)->where('status', '1')->orderBy('id', 'desc')->with('articlePhotoFisrt','articleWriter')->paginate(10);
+        return view('contents.entertainment')->with($data);
     }
 
     public function social()
     {
-        $data['socials'] = Article::where('category_id', 4)->where('status', '1')->orderBy('id', 'desc')->with('articlePhotoFisrt')->paginate(10);
-        return view('contents.social')->with($data);
+        $data['articlelists'] = Article::where('category_id', 1)->where('status', '1')->orderBy('id', 'desc')->with('articlePhotoFisrt','articleWriter')->paginate(10);
+        return view('contents.entertainment')->with($data);
     }
 
     // get article detail
