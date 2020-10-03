@@ -20,6 +20,7 @@
                             <th scope="col">Title</th>
                             <th scope="col">Created At</th>
                             <th scope="col">Category</th>
+                            <th scope="col">Status</th>
                             <th scope="col">Publised At</th>
                             <th scope="col">Action</th>
                           </tr>
@@ -34,12 +35,16 @@
                             <td>{{$record->title}}</td>
                             <td>{{$record->created_at}}</td>
                             <td>{{$record->categories->title}}</td>
+                            <td>{{$record->status == '1' ? 'Published': 'Not Yet Publish'}}</td>
                             <td>{{$record->published_at}}</td>
                             <td>
                               <div class="btn-group">
                                 <div class="text-nowrap">
-                                  <a class="btn btn-danger" href="{{url('admin/articles/delete').'/'.$record->id}}"><i class="fas fa-trash-alt"></i></a>
+                                  <a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?');" href="{{url('admin/articles/delete').'/'.$record->id}}"><i class="fas fa-trash-alt"></i></a>
                                   <a class="btn btn-dark" href="{{url('admin/articles/show').'/'.$record->id}}"><i class="fas fa-edit"></i></a>
+                                  @if ($record->status == '0')
+                                    <a class="btn btn-dark" onclick="return confirm('Are you sure you want to publish?');" href="{{url('admin/articles/publish').'/'.$record->id}}" title="Make Publish"><i class="fas fa-upload"></i></a>
+                                  @endif
                                 </div>
                               </div>
                             </td>

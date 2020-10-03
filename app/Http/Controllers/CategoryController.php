@@ -46,7 +46,7 @@ class CategoryController extends Controller
 
         $createOrUpdate = Category::updateOrCreate(['id' => $id], $data);
 
-        return redirect('admin/category');
+        return redirect('admin/category')->with('success','Category '.($id != '0'? 'Updated' : 'Created') .' successfully!');
     }
 
     /**
@@ -63,29 +63,6 @@ class CategoryController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
@@ -95,11 +72,9 @@ class CategoryController extends Controller
     {
         $detete = Category::where('id', $request->id)->delete();
         if($detete) {
-            $request->session()->flash('success', 'Data has been deleted!');
-            return redirect('admin/category');
+            return redirect('admin/category')->with('success', 'Category has been deleted!');
         }else {
-            $request->session()->flash('error','Fail to save data, please check again!');
-            return redirect('admin/category');
+            return redirect('admin/category')->with('error','Fail to save data, please check again!');
         }
     }
 }
