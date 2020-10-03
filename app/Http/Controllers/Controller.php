@@ -11,10 +11,4 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-
-    // Dynamic menu
-    public function menuCategories() {
-        $data = Category::get();
-        return $data;
-    }
 }

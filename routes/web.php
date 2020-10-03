@@ -38,7 +38,7 @@ Route::prefix('admin')->group(function () {
     ////
     Route::get('/articles/published', 'ArticleController@published')->name('articles/published');
     Route::get('/articles/publish/{id?}', 'ArticleController@makePubish')->name('admin/articles/publish');
-    
+
     Route::get('/articles', 'ArticleController@index')->name('articles');
     Route::get('/articles/create', 'ArticleController@create')->name('articles/create');
     Route::get('/articles/show/{id?}', 'ArticleController@show')->name('articles/show');
