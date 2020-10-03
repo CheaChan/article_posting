@@ -6,37 +6,36 @@
       <div class="col-sm-8">
         <ul class="nav nav-tabs">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Entertainments</a>
+            <a class="nav-link active bg-danger" href="#">Entertainments</a>
           </li>
         </ul>
         <div class="row">
-        @foreach ($entertainments as $item)
-          <div class="col-md-6">
-              <a style="text-decoration:none" href="{{url('view/article/detail/'.$item->id)}}">
-              <div class="card">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <img src="{{asset($item->articlePhotoFisrt[0]->path)}}" class="img-fluid image-resolution" alt="Responsive image">
-                      </div>
-                      <div class="col-md-12">
-                          <h5 class="card-title">{{ $item->title}}</h5>
-                          <hr>
-                          <p><span class="fa fa-calendar"></span> {{$item->published_at}}</p>
-                          <p class="card-text">{{ \Illuminate\Support\Str::limit($item->description, 80) }}</p>
-                      </div>
+                @foreach ($entertainments as $item)
+                    <div class="col-md-6">
+                    <a style="text-decoration:none" href="{{url('view/article/detail/'.$item->id)}}">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                            <div class="col-md-12">
+                                <img src="{{asset($item->articlePhotoFisrt[0]->path)}}" class="img-fluid image-resolution" alt="Responsive image">
+                            </div>
+                            <div class="col-md-12">
+                                <p class="text-muted"><span class="fa fa-user"> {{$item->articleWriter->f_name." ".$item->articleWriter->l_name}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fa fa-calendar"> {{$item->published_at}}</span></p>
+                                <h5 class="card-title text-dark">{{ $item->title}}</h5>
+                                <p class="card-text">{{ \Illuminate\Support\Str::limit($item->description, 80) }}</p>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </a>
                     </div>
-                  </div>
-                </div>
-              </a>
-        </div>
-        @endforeach
+                @endforeach
         </div>
       </div>
       <div class="col-sm-4">
         <ul class="nav nav-tabs">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Download</a>
+            <a class="nav-link active bg-danger" href="#">Download</a>
           </li>
         </ul>
           <!-- Data second column  -->

@@ -16,7 +16,7 @@ class CategoryController extends Controller
     public function index()
     {
         $data['categories'] = Category::get();
-        
+
         return view('admins.categories.index')->with($data);
     }
 
@@ -58,7 +58,7 @@ class CategoryController extends Controller
     public function show($id)
     {
         $data['object'] = Category::find($id);
-        
+
         return view('admins.categories.createOrUpdate')->with($data);
     }
 
@@ -96,10 +96,10 @@ class CategoryController extends Controller
         $detete = Category::where('id', $request->id)->delete();
         if($detete) {
             $request->session()->flash('success', 'Data has been deleted!');
-            return redirect('admin/category');  
+            return redirect('admin/category');
         }else {
             $request->session()->flash('error','Fail to save data, please check again!');
-            return redirect('admin/category'); 
+            return redirect('admin/category');
         }
     }
 }

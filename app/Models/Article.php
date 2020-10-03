@@ -28,5 +28,9 @@ class Article extends Model
     {
         return $this->hasMany('App\Models\ArticlePhoto', 'article_id');
     }
+    public function articleWriter()
+    {
+        return $this->belongsTo('App\User', 'user_id');
+    }
 
 }

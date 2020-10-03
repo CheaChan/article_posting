@@ -19,7 +19,7 @@ class ArticleController extends Controller
     public function index()
     {
         $data['articles'] = Article::with('categories')->orderBy('id', 'desc')->get();
-        
+
         return view('admins.articles.index')->with($data);
     }
 
@@ -27,7 +27,7 @@ class ArticleController extends Controller
     public function published()
     {
         $data['articles'] = Article::with('categories')->where('status', '1')->orderBy('id', 'desc')->get();
-        
+
         return view('admins.articles.index')->with($data);
     }
 
@@ -85,7 +85,7 @@ class ArticleController extends Controller
         else:
                 $image = '';
         endif;
-        
+
 
         return redirect('admin/articles');
     }
@@ -137,23 +137,23 @@ class ArticleController extends Controller
         $detete = Article::where('id', $request->id)->delete();
         if($detete) {
             $request->session()->flash('success', 'Data has been deleted!');
-            return redirect('admin/articles');  
+            return redirect('admin/articles');
         }else {
             $request->session()->flash('error','Fail to save data, please check again!');
-            return redirect('admin/articles'); 
+            return redirect('admin/articles');
         }
     }
 
     public function allArticles()
     {
         $data['all_articles'] = Article::with('articlePhotoFisrt')->where('status', '1')->orderBy('id', 'desc')->paginate(10);
-        
+
         return view('contents.all_articles')->with($data);
     }
 
     public function entertainment()
     {
-        $data['entertainments'] = Article::where('category_id', 1)->where('status', '1')->orderBy('id', 'desc')->with('articlePhotoFisrt')->paginate(10);
+        $data['entertainments'] = Article::where('category_id', 1)->where('status', '1')->orderBy('id', 'desc')->with('articlePhotoFisrt','articleWriter')->paginate(10);
         return view('contents.entertainment')->with($data);
     }
 
