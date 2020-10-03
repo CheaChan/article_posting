@@ -63,11 +63,12 @@ class ArticleController extends Controller
      */
     public function store(Request $request, $id = 0)
     {
+        $slug = preg_replace('~[^\pL\d]+~u', '-', $request->title);
         $data = [
             'title' => $request->title,
             'content' => $request->content,
             'published_at' => date('Y-m-d'),
-            'slug' => 'slug_name',
+            'slug' => 'article-'.$slug,
             'category_id' => $request->category_id,
             'amount_viewer' => 0,
             'video_link' => $request->video_link == '' ? '0' : $request->video_link,
