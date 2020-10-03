@@ -39,7 +39,7 @@
                             <td>
                               <div class="btn-group">
                                 <div class="text-nowrap">
-                                  <a class="btn btn-danger" href="{{url('admin/category/delete').'/'.$record->id}}"><i class="fas fa-trash-alt"></i> </a>
+                                  <a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?');" href="{{url('admin/category/delete').'/'.$record->id}}"><i class="fas fa-trash-alt"></i> </a>
                                   <a class="btn btn-dark" href="{{url('admin/category/show').'/'.$record->id}}"><i class="fas fa-edit"></i> </a>
                                 </div>
                               </div>

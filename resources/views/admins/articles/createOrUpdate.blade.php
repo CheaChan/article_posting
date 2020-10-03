@@ -3,10 +3,10 @@
 @section('content')
  <div class="container">
   <div class="row justify-content-center">
-  <div class="col-md-10">
+  <div class="col-md-12">
    <div class="card">
     <div class="card-header">
-     <h1>Create Article</h1>
+     Create Article
     </div>
     <div class="card-body">
      <form action="{{ url('admin/articles/store') }}/{{ isset($object) ? $object->id : 0}}" method="POST" enctype='multipart/form-data'>

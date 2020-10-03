@@ -23,12 +23,24 @@ class ArticleController extends Controller
         return view('admins.articles.index')->with($data);
     }
 
-    // published
+    // Get published
     public function published()
     {
         $data['articles'] = Article::with('categories')->where('status', '1')->orderBy('id', 'desc')->get();
         
-        return view('admins.articles.index')->with($data);
+        return view('admins.articles_published.index')->with($data);
+    }
+
+    // Publish 
+    public function makePubish($id = 0)
+    {
+        $make_publish = Article::where('id', $id)
+        ->update([
+            'status' => '1',
+            'published_at' => date('Y-m-d'),
+        ]);
+        
+        return redirect('admin/articles')->with('success', 'The article has been published successfully!');
     }
 
 
