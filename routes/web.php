@@ -36,6 +36,8 @@ Route::prefix('admin')->group(function () {
     Route::post('/category/store/{id?}', 'CategoryController@store')->name('category/store');
     Route::get('/category/delete/{id?}', 'CategoryController@destroy')->name('category/delete');
     ////
+    Route::get('/articles/published', 'ArticleController@published')->name('articles/published');
+
     Route::get('/articles', 'ArticleController@index')->name('articles');
     Route::get('/articles/create', 'ArticleController@create')->name('articles/create');
     Route::get('/articles/show/{id?}', 'ArticleController@show')->name('articles/show');

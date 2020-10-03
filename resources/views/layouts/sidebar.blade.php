@@ -56,6 +56,12 @@
              </a>
            </li>
            <li class="nav-item">
+            <a class="nav-link" href="{{url('admin/articles/published')}}">
+               <i class="far fa-circle nav-icon"></i>
+               <p>Published Acticles List</p>
+             </a>
+           </li>
+           <li class="nav-item">
             <a class="nav-link" href="{{url('admin/articles/create')}}">
                <i class="far fa-circle nav-icon"></i>
                <p>Create Acticle</p>
