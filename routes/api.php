@@ -61,3 +61,13 @@ Route::get( 'article/search', function (Request $request) {
     else
         return ['response' => false, 'message' => 'Not Found'];
 } );
+
+
+// Filter
+Route::get( 'article/filter', function (Request $request) {
+    $article_list = Article::whereBetween( 'published_at', [$request->start_date, $request->end_date])->paginate(10);
+    if (count( $article_list ) > 0)
+        return ['response' => true, 'message' => 'Successfully', 'data' => $article_list];
+    else
+        return ['response' => false, 'message' => 'Not Found'];
+} );
