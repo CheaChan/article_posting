@@ -160,7 +160,7 @@ class ArticleController extends Controller
     public function allArticles()
     {
         $data['articlelists'] = Article::where('status', '1')->orderBy('id', 'desc')->with('articlePhotoFisrt','articleWriter')->paginate(10);
-        return view('contents.entertainment', ["title" => "New Article"])->with($data);
+        return view('contents.entertainment', ["title" => "New Articles"])->with($data);
     }
 
     public function entertainment()
