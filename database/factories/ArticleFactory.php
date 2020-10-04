@@ -17,7 +17,7 @@ $data = $factory->define(Article::class, function (Faker $faker) {
         'slug' => $faker->slug(),
         'category_id' => rand($min, $max),
         'user_id' => rand(1,2),
-        'published_at' => $faker->dateTime($max = 'now', $timezone = null),
+        'published_at' => $faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now', $timezone = null),
         'status' => '1'
     ];
 });
