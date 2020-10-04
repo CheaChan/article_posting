@@ -6,6 +6,23 @@
   <div class="col-md-2"></div>
   <div class="col-md-8">
    <h2>{{$get_article_detail->title}}</h2><br>
+   <!-- change  -->
+     <div class="row">  
+      <!-- <div class="col-md-2"></div> -->
+       <div class="col-md-12" style="margin-left: 685px;">
+         {{--  {{ url()->current() }}  --}}
+         <div class="btn-group">
+           <div class="text-nowrap">
+             <div id="fb-root"></div>
+             <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0&appId=2488896414478775&autoLogAppEvents=1" nonce="TtHGXdEv"></script>
+             <div class="fb-share-button"  style="margin-bottom: 20px;" data-href="https://laravel.com/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div><br>
+             <script async src="https://telegram.org/js/telegram-widget.js?11" data-telegram-share-url="https://laravel.com/" data-size="large"></script>  
+           </div>
+         </div>
+       </div>
+       <!-- <div class="col-md-2"></div> -->
+     </div>
+<!-- change -->
    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -29,7 +46,7 @@
   </div>
   <div class="col-md-2"></div>
  </div>
- <div class="row">
+ <!-- <div class="row">
   <div class="col-md-2"></div>
    <div class="col-md-8">
      {{--  {{ url()->current() }}  --}}
@@ -43,7 +60,7 @@
      </div>
    </div>
    <div class="col-md-2"></div>
- </div>
+ </div> -->
  <div class="row">
   <div class="col-md-2"></div>
   <div class="col-md-8">
