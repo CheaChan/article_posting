@@ -35,11 +35,12 @@
         </div>
       </div>
       <div class="col-sm-4">
-        {{-- <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs tabs-custom-style">
           <li class="nav-item">
-            <a class="nav-link active bg-danger" href="#">Download</a>
+          <a class="nav-link active" href="#">Advertisements</a>
           </li>
-        </ul> --}}
+        </ul>
+        <br>
           <!-- Data second column  -->
           @include('contents.right_link')
       </div>
@@ -50,5 +51,4 @@
 </div>
 </div>
 @endsection
-
 @extends('footer')
