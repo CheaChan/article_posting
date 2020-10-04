@@ -26,6 +26,12 @@ class Article extends Model
         return $this->hasMany('App\Models\ArticlePhoto', 'article_id');
     }
 
+    // has one
+    public function articlePhotoHasOne()
+    {
+        return $this->hasOne('App\Models\ArticlePhoto', 'article_id');
+    }
+
     public function articlePhotoFisrt()
     {
         return $this->hasMany('App\Models\ArticlePhoto', 'article_id');
