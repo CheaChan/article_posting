@@ -1,6 +1,6 @@
 # Article Post
 
-The project is the Article Post, it provides the news and articles within Entertainment, Sports, Technologies and Socials news.
+The project is the Article Post, it provides the news and articles within Entertainment, Sports, Technologies and Socials news and more.
 
 ----------
 
@@ -8,16 +8,16 @@ The project is the Article Post, it provides the news and articles within Entert
 
 ## Installation
 
-Please check the official laravel installation guide for server requirements before you start. [Official Documentation](https://laravel.com/docs/5.4/installation#installation)
+Please check the official laravel installation guide for server requirements before you start. [Official Documentation](https://laravel.com/docs/7.x/installation#installation)
 
 
 Clone the repository
 
-    git clone https://github.com/devit-chea/mini-project-orm.git
+    git clone https://github.com/CheaChan/article_posting.git
 
 Switch to the repo folder
 
-    cd mini-project-orm
+    cd article_posting
 
 Install all the dependencies using composer
 
@@ -51,8 +51,8 @@ You can now access the server at http://localhost:8000
 
 **TL;DR command list**
 
-    git clone https://github.com/devit-chea/mini-project-orm.git
-    cd mini-project-orm
+    git clone https://github.com/CheaChan/article_posting.git
+    cd article_posting
     composer install
     cp .env.example .env
     php artisan key:generate
@@ -75,7 +75,7 @@ Run the database seeder and you're done
 
 ***Note*** : It's recommended to have a clean database before seeding. You can refresh your migrations at any point to clean the database by running the following command
 
-    php artisan migrate:refresh
+    php artisan migrate:fresh
 
 <!-- ## API Specification
 

@@ -159,32 +159,32 @@ class ArticleController extends Controller
 
     public function allArticles()
     {
-        $data['articlelists'] = Article::where('category_id', 1)->where('status', '1')->orderBy('id', 'desc')->with('articlePhotoFisrt','articleWriter')->paginate(10);
-        return view('contents.entertainment')->with($data);
+        $data['articlelists'] = Article::where('status', '1')->orderBy('id', 'desc')->with('articlePhotoFisrt','articleWriter')->paginate(10);
+        return view('contents.articlelist', ["title" => "New Articles"])->with($data);
     }
 
     public function entertainment()
     {
         $data['articlelists'] = Article::where('category_id', 1)->where('status', '1')->orderBy('id', 'desc')->with('articlePhotoFisrt','articleWriter')->paginate(10);
-        return view('contents.entertainment')->with($data);
+        return view('contents.articlelist', ['title' => 'Entertainments'])->with($data);
     }
 
     public function sports()
     {
         $data['articlelists'] = Article::where('category_id', 1)->where('status', '1')->orderBy('id', 'desc')->with('articlePhotoFisrt','articleWriter')->paginate(10);
-        return view('contents.entertainment')->with($data);
+        return view('contents.articlelist', ['title' => 'Sports'])->with($data);
     }
 
     public function technology()
     {
         $data['articlelists'] = Article::where('category_id', 1)->where('status', '1')->orderBy('id', 'desc')->with('articlePhotoFisrt','articleWriter')->paginate(10);
-        return view('contents.entertainment')->with($data);
+        return view('contents.articlelist', ['title' => 'Technology'])->with($data);
     }
 
     public function social()
     {
         $data['articlelists'] = Article::where('category_id', 1)->where('status', '1')->orderBy('id', 'desc')->with('articlePhotoFisrt','articleWriter')->paginate(10);
-        return view('contents.entertainment')->with($data);
+        return view('contents.articlelist', ['title' => 'Socials'])->with($data);
     }
 
     // get article detail

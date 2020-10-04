@@ -74,7 +74,8 @@
     <body>
         <div class="logo-bar">
             <div class="container">
-                <img class="img-logo-post" src="{{asset('images/guestpost.png')}}" alt="logo">
+                {{-- <img class="img-logo-post" src="{{asset('images/guestpost.png')}}" alt="logo"> --}}
+                <img src="https://ads.sabay.com/images/5046d3fa9915fa6cf090013c8d6b89aa.jpg" width="1000" height="75" alt="" title="" border="0">
             </div>
         </div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
