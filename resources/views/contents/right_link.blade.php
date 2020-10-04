@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
     .single-right-content {
-    width: 300px;
+    /* width: 300px; */
     float: right;
 }
 .single-right-content .ads_items:first-child {
@@ -72,29 +72,36 @@ img {
         <!-- Popular news block -->
   <div class="posts_item right-hot-news">
     <div class="">
-      <div class="title">អត្ថបទពេញនិយម<div class="border"></div></div>
+      {{-- <div class="title">អត្ថបទពេញនិយម<div class="border"></div></div> --}}
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         <div class="clear"></div>
     </div>
   </div>
       <div id="ad_zone_02" class="ads_items web" zone="8"><ins style="text-decoration: none;"><script src="https://www.youtube.com/iframe_api"></script><a href="https://ads.sabay.com/openx/www/delivery/ck.php?oaparams=2__bannerid=50995__zoneid=8__cb=fd20f8f9d6__oadest=https%3A%2F%2Fwww.facebook.com%2FWilmarCLVCambodia%2Fvideos%2F298357471613477%2F%3Fv%3D298357471613477" target="_blank"><img src="https://ads.sabay.com/images/733a4d9f35642e784abdcdcf2c6227c4.png" width="300" height="250" alt="" title="" border="0"></a><div id="beacon_fd20f8f9d6" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="https://ads.sabay.com/openx/www/delivery/lg.php?bannerid=50995&amp;campaignid=15685&amp;zoneid=8&amp;loc=https%3A%2F%2Fnews.sabay.com.kh%2Ftopics%2Ftechnology&amp;referer=https%3A%2F%2Fnews.sabay.com.kh%2Ftopics%2Fentertainment&amp;cb=fd20f8f9d6" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div></ins><script async="" src="//ads.sabay.com/openx/www/delivery/asyncjs.php"></script></div>
+      <br>
       <div class="posts_item right-hot-news">
     <div class="">
-      <div class="title">អត្ថបទថ្មី<div class="border"></div></div>
-      @foreach(\App\Models\Article::where('status', '1')->orderBy('amount_viewer', 'desc')->limit(10)->get() as $menu_item)
+      <div class="title">Popular Articles<div class="border"></div></div>
+      @foreach(\App\Models\Article::where('status', '1')->orderBy('amount_viewer', 'desc')->limit(5)->get() as $menu_item)
         <div class="media">
             {{-- <div class="media-left right-small-post item">
               <a href="https://news.sabay.com.kh/article/1231608#utm_campaign=onpage">
                 <div class="img lozad" data-background-image="https://cdn.sabay.com/cdn/media.sabay.com/media/Football(32)/foo/5f79328b875d1_1601778300_extra_small.jpg" data-loaded="true" style="background-image: url(&quot;https://cdn.sabay.com/cdn/media.sabay.com/media/Football(32)/foo/5f79328b875d1_1601778300_extra_small.jpg&quot;);"></div>
               </a>
             </div> --}}
-            <div class="media-body">
-            <a href="{{ url('view/article/detail/'. $menu_item->id) }}">
-                <p>{{ $menu_item->title }}</p>
-              </a>
+            <div class="">
+                <a class="text-muted" style="text-decoration:none" href="{{ url('view/article/detail/'. $menu_item->id) }}">
+                    <div class="col-md-5 post-news-card float-left">
+                        <img src="{{asset($menu_item->articlePhotoFisrt[0]->path)}}" class="img-fluid image-resolution" style="width:100%;height:90px;" alt="Responsive image">
+                    </div>
+                    <div class="float-right col-md-7">
+                        <p>{{ \Illuminate\Support\Str::limit($menu_item->title,40) }}</p>
+                        <p><span class="fa fa-calendar"> {{ $menu_item->published_at}}</span></p>
+                    </div>
+                </a>
             </div>
-          </div>
+        </div>
         @endforeach
         <div class="clear"></div>
     </div>
   </div>
-<div id="ad_zone_03" class="ads_items web" zone="9"><ins style="text-decoration: none;"><a href="https://ads.sabay.com/openx/www/delivery/ck.php?oaparams=2__bannerid=49221__zoneid=222__cb=980e86c772__oadest=https%3A%2F%2Fbit.ly%2F2UhO0gM" target="_blank"><img src="https://ads.sabay.com/images/ba7b70eedeb5efa71372c09e077d7956.jpg" width="300" height="250" alt="" title="" border="0"></a><div id="beacon_980e86c772" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="https://ads.sabay.com/openx/www/delivery/lg.php?bannerid=49221&amp;campaignid=14206&amp;zoneid=222&amp;loc=https%3A%2F%2Fnews.sabay.com.kh%2Ftopics%2Ftechnology&amp;referer=https%3A%2F%2Fnews.sabay.com.kh%2Ftopics%2Fentertainment&amp;cb=980e86c772" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div></ins><script async="" src="//ads.sabay.com/openx/www/delivery/asyncjs.php"></script></div></div>
+{{-- <div id="ad_zone_03" class="ads_items web" zone="9"><ins style="text-decoration: none;"><a href="https://ads.sabay.com/openx/www/delivery/ck.php?oaparams=2__bannerid=49221__zoneid=222__cb=980e86c772__oadest=https%3A%2F%2Fbit.ly%2F2UhO0gM" target="_blank"><img src="https://ads.sabay.com/images/ba7b70eedeb5efa71372c09e077d7956.jpg" width="300" height="250" alt="" title="" border="0"></a><div id="beacon_980e86c772" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="https://ads.sabay.com/openx/www/delivery/lg.php?bannerid=49221&amp;campaignid=14206&amp;zoneid=222&amp;loc=https%3A%2F%2Fnews.sabay.com.kh%2Ftopics%2Ftechnology&amp;referer=https%3A%2F%2Fnews.sabay.com.kh%2Ftopics%2Fentertainment&amp;cb=980e86c772" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div></ins><script async="" src="//ads.sabay.com/openx/www/delivery/asyncjs.php"></script></div></div> --}}
