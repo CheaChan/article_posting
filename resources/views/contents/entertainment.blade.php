@@ -6,7 +6,7 @@
       <div class="col-sm-8">
         <ul class="nav nav-tabs">
           <li class="nav-item">
-            <a class="nav-link active bg-danger" href="#">Entertainments</a>
+          <a class="nav-link active bg-danger" href="#">{{ $title }}</a>
           </li>
         </ul>
         <div class="row">
@@ -33,12 +33,13 @@
         </div>
       </div>
       <div class="col-sm-4">
-        <ul class="nav nav-tabs">
+        {{-- <ul class="nav nav-tabs">
           <li class="nav-item">
             <a class="nav-link active bg-danger" href="#">Download</a>
           </li>
-        </ul>
+        </ul> --}}
           <!-- Data second column  -->
+          @include('contents.right_link')
       </div>
   </div>
 <br>
@@ -47,4 +48,5 @@
 </div>
 </div>
 @endsection
+
 @extends('footer')
