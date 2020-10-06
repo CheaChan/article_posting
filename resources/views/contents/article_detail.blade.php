@@ -19,8 +19,8 @@
                     <div class="btn-group">
                         <div class="text-nowrap">
                           <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0&appId=2488896414478775&autoLogAppEvents=1" nonce="TtHGXdEv"></script>
-                          <div class="fb-share-button" data-href="https://laravel.com/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
-                          <script async src="https://telegram.org/js/telegram-widget.js?11" data-telegram-share-url="https://laravel.com/" data-size="large"></script>
+                          <div class="fb-share-button" data-href="{{Request::url()}}" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+                          <script async src="https://telegram.org/js/telegram-widget.js?11" data-telegram-share-url="{{Request::url()}}" data-size="large"></script>
                         </div>
                     </div>
                 </div>
