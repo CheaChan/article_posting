@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <table id="articles" class="table table-responsive">
+                    <table id="articles" class="table">
                         <thead class="thead-dark">
                           <tr>
                             <th scope="col">#</th>

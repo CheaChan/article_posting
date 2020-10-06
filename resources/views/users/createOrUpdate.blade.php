@@ -13,7 +13,7 @@
       {{csrf_field()}}
       <div class="form-group">
        <label for="exampleInputEmail1">Name</label>
-       <input type="text" class="form-control" name="name" id="exampleInputEmail1" value="{{isset($object) ? $object->name : ''}}" aria-describedby="emailHelp" placeholder="Enter email">
+       <input type="text" class="form-control" name="name" id="exampleInputEmail1" value="{{isset($object) ? $object->name : ''}}" aria-describedby="emailHelp" placeholder="Enter Name">
        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
      </div>
       <div class="form-group">
@@ -26,7 +26,7 @@
         <select name="user_roles_id" class="form-control" required>
             <option value=""> -- Please Select --</option>
                 @foreach ($user_roles as $user_role)
-                    <option name="user_roles_id" value="{{$user_role->id}}" {{ isset($object) ? ($object->id == $user_role->id ? 'selected': ''): ''}}>{{ $user_role->name }}</option>   
+                    <option name="user_roles_id" value="{{$user_role->id}}" {{ isset($object) ? ($object->id == $user_role->id ? 'selected': ''): ''}}>{{ $user_role->name }}</option>
                 @endforeach
         </select>
       </div> --}}
