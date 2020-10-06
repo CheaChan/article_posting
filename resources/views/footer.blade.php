@@ -1,36 +1,4 @@
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Article Post</title>
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
-        <!-- Styles -->
-        <style>
-           @media only screen and (min-width: 29.8125rem /* 477px */) {
-  .footer-bottom {
-    justify-content: space-evenly;
-  }
-}
-@media only screen and (min-width: 77.5rem /* 1240px */) {
-  .footer-bottom {
-    justify-content: space-evenly;
-  }
-}
-        </style>
-        <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/custome.css') }}" rel="stylesheet">
-    </head>
-    <body>
  <!-- Footer -->
  <footer style="position: static;
   left: 0;
