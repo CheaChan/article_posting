@@ -162,6 +162,17 @@ class ArticleController extends Controller
         $data['articlelists'] = Article::where('status', '1')->orderBy('id', 'desc')->with('articlePhotoFisrt','articleWriter')->paginate(10);
         return view('contents.articlelist', ["title" => "New Articles"])->with($data);
     }
+    // search article
+    public function searchArticle(Request $request)
+    {
+        $article_list['articlelists'] = Article::where( 'title', 'LIKE', '%' . $request->title . '%' )->paginate(10);
+
+        if(count($article_list) > 0) {
+            return view('contents.articlelist', ["title" => "Search Articles"])->with($article_list);
+        }else{
+            return view ('welcome')->withMessage('No Details found. Try to search again !');
+        }
+    }
 
     public function entertainment()
     {

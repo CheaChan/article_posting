@@ -47,6 +47,7 @@ Route::prefix('admin')->group(function () {
     // content
     // Role
     Route::get('/role/lists', 'RoleController@index')->name('role/lists');
+
 });
 
 
@@ -57,6 +58,7 @@ Route::get('/articles/technologies', 'ArticleController@technology')->name('arti
 Route::get('/articles/socials', 'ArticleController@social')->name('articles/socials');
 
 // view detail
-
 Route::get('view/article/detail/{id?}', 'ArticleController@getArticle_detail')->name('view/article/detail');
+// Search Article
+Route::any('articles/search', 'ArticleController@searchArticle')->name('view/article/lists');
 
