@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="row">
-                <img src="{{asset($get_article_detail->articlePhoto[0]->path)}}" style="height: 500px;" alt="...">
+                <img class="img-thumbnail" src="{{asset($get_article_detail->articlePhoto[0]->path)}}" style="height: 500px;" alt="...">
             </div>
             <br>
             <div class="row">
