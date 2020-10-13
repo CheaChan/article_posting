@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-            <h2>{{$get_article_detail->title}}</h2><br>
+            <h2><b>{{$get_article_detail->title}}</b></h2><br>
             <div class="row">
                 <div class="col-md-3">
                     <p class="text-muted"><span class="fa fa-user"> {{$get_article_detail->articleWriter->f_name." ".$get_article_detail->articleWriter->l_name}}</span></p>

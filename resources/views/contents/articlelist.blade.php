@@ -23,7 +23,7 @@
                             </div>
                             <div class="col-md-12">
                                 <p class="text-muted"><span class="fa fa-user"> {{$item->articleWriter->f_name." ".$item->articleWriter->l_name}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fa fa-calendar"> {{$item->published_at}}</span></p>
-                                <h5 class="card-title text-dark">{{ $item->title}}</h5>
+                                <h5 class="card-title text-dark"><b>{{ $item->title}}</b></h5>
                                 <p class="card-text">{{ \Illuminate\Support\Str::limit($item->description, 80) }}</p>
                             </div>
                             </div>

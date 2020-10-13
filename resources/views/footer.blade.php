@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-lg-4 col-sm-4 footer-about wow fadeInUp">
-                    <img src="http://127.0.0.1:8000/images/uploads/file/image-default.png" class="img-fluid image-resolution" alt="Responsive image">
+                <img src="{{ asset('images/uploads/file/image-default.png') }}" class="img-fluid image-resolution" alt="Responsive image">
                     <br> <br>
                     <p><i class="fas fa-map-marker-alt"></i> BP511 St. 371 Phum Tropeang Chhuk (Borey Sorla), Sangkat Tek Thla, Khan Sen Sok, Phnom Penh</p>
                     <p><i class="fas fa-envelope"></i> Email: <a  class="text-white" href="#">articleposting@gmail.com</a></p>
