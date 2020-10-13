@@ -182,19 +182,19 @@ class ArticleController extends Controller
 
     public function sports()
     {
-        $data['articlelists'] = Article::where('category_id', 1)->where('status', '1')->orderBy('id', 'desc')->with('articlePhotoFisrt','articleWriter')->paginate(10);
+        $data['articlelists'] = Article::where('category_id', 2)->where('status', '1')->orderBy('id', 'desc')->with('articlePhotoFisrt','articleWriter')->paginate(10);
         return view('contents.articlelist', ['title' => 'Sports'])->with($data);
     }
 
     public function technology()
     {
-        $data['articlelists'] = Article::where('category_id', 1)->where('status', '1')->orderBy('id', 'desc')->with('articlePhotoFisrt','articleWriter')->paginate(10);
+        $data['articlelists'] = Article::where('category_id', 3)->where('status', '1')->orderBy('id', 'desc')->with('articlePhotoFisrt','articleWriter')->paginate(10);
         return view('contents.articlelist', ['title' => 'Technology'])->with($data);
     }
 
     public function social()
     {
-        $data['articlelists'] = Article::where('category_id', 1)->where('status', '1')->orderBy('id', 'desc')->with('articlePhotoFisrt','articleWriter')->paginate(10);
+        $data['articlelists'] = Article::where('category_id', 4)->where('status', '1')->orderBy('id', 'desc')->with('articlePhotoFisrt','articleWriter')->paginate(10);
         return view('contents.articlelist', ['title' => 'Socials'])->with($data);
     }
 
