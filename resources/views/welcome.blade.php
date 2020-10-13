@@ -78,7 +78,7 @@
                 <img src="https://ads.sabay.com/images/5046d3fa9915fa6cf090013c8d6b89aa.jpg" width="1000" height="75" alt="" title="" border="0">
             </div>
         </div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
             <div class="container">
             <a class="navbar-brand" href="{{url('all/articles')}}"><i class="fa fa-home"></i></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -100,7 +100,12 @@
                 </li>
               </ul>
             </div>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+              </form>
             </div>
+
           </nav>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
