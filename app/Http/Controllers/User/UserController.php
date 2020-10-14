@@ -17,7 +17,7 @@ class UserController extends Controller
     public function index()
     {
         $data['users'] = User::get();
-        
+
         return view('users.home')->with($data);
     }
 
@@ -44,16 +44,20 @@ class UserController extends Controller
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
+                'f_name' => 'devit',
+                'l_name' => 'chan'
             ];
         else:
             $data = [
                 'name' => $request->name,
                 'email' => $request->email,
+                'f_name' => 'devit',
+                'l_name' => 'chan'
             ];
         endif;
         $createOrUpdate = User::updateOrCreate(['id' => $id], $data);
 
-        return redirect('home');
+        return redirect('admin/users/lists');
     }
 
     /**
@@ -103,10 +107,10 @@ class UserController extends Controller
         $detete = User::where('id', $request->id)->delete();
         if($detete) {
             $request->session()->flash('success', 'Data has been deleted!');
-            return redirect('home');
+            return redirect('admin/users/lists');
         }else {
             $request->session()->flash('error','Fail to save data, please check again!');
-            return redirect('home');
+            return redirect('admin/users/lists');
         }
     }
 }
