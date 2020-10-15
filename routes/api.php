@@ -20,8 +20,8 @@ Route::post('login', 'Api\PassportAuthController@login');
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::group(['prefix' => 'v0', 'middleware' => 'auth:api'], function () {
+// , 'middleware' => 'auth:api'
+Route::group(['prefix' => 'v0'], function () {
     // Article list
     Route::get('article/list/{category_id?}', function ($category_id = '')
     {
@@ -32,7 +32,7 @@ Route::group(['prefix' => 'v0', 'middleware' => 'auth:api'], function () {
             $data = Article::where('status', '1')->where('category_id', $category_id)->paginate(10);
         }
 
-        return $data;
+        return response()->json($data);
     });
 
     // Article detail
