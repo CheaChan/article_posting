@@ -76,6 +76,7 @@ class ArticleController extends Controller
         ];
 
         $createOrUpdate = Article::updateOrCreate(['id' => $id], $data);
+        Article::where('id', $createOrUpdate->id)->update(['url' => 'http://article-posting.herokuapp.com/view/article/detail/'.$createOrUpdate->id]);
         $images = $request->file('files');
         if ($request->hasFile('files')) :
                 foreach ($images as $item):
@@ -92,7 +93,7 @@ class ArticleController extends Controller
                             'article_id' => $createOrUpdate->id,
                             'name' => '/images/uploads/file/'.$image,
                             'path' => '/images/uploads/file/'.$image
-                              )
+                        )
                     );
                 endforeach;
         else:

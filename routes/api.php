@@ -35,6 +35,15 @@ Route::group(['prefix' => 'v0'], function () {
         return response()->json($data);
     });
 
+    Route::post('article/counter/{article_id?}', function ($article_id) {
+        $get_amount_viewer = Article::where('id', $article_id)->select('amount_viewer')->first();
+        $save_amount_viewer = Article::where('id', $article_id)->update(['amount_viewer' => ($get_amount_viewer->amount_viewer + 1)]);
+
+        if ($save_amount_viewer) {
+            return true;
+        }
+    });
+
     // Article detail
 
     Route::get('article/detail/{article_id?}', function ($article_id = '')
@@ -58,7 +67,9 @@ Route::group(['prefix' => 'v0'], function () {
     // Search
 
     Route::get( 'article/search', function (Request $request) {
-        $article_list = Article::where ( 'title', 'LIKE', '%' . $request->title . '%' )->paginate(10);
+        $search = $request->get('title');
+
+        $article_list = Article::where ( 'title', 'LIKE', '%' . $search . '%' )->paginate(10);
         if (count( $article_list ) > 0)
             return ['response' => true, 'message' => 'Successfully', 'data' => $article_list];
         else

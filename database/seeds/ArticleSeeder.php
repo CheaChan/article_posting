@@ -11,6 +11,9 @@ class ArticleSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\Article::class, 50)->create();
+        for ($i=1 ; $i<=50 ; $i++) {
+            factory(\App\Models\Article::class, 1)->create(['url' => 'http://article-posting.herokuapp.com/view/article/detail/'.$i]);
+
+        }
     }
 }
