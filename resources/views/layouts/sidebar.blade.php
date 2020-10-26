@@ -14,7 +14,13 @@
        <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
      </div>
      <div class="info">
-       <a href="#" class="d-block">UP Students</a>
+       <a href="#" class="d-block">
+        @if(Auth::user()->role_id == 1)
+            <span>Super Admin</span>
+        @else
+            <span>User</span>
+        @endif
+       </a>
      </div>
    </div>
 
