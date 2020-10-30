@@ -13,32 +13,48 @@
       {{csrf_field()}}
       <div class="form-group">
         <label>Category</label>
-        <select name="category_id" class="form-control" required>
+        <select name="category_id" class="form-control">
             <option value=""> -- Please Select --</option>
                 @foreach ($categories as $category)
                     <option name="category_id" value="{{$category->id}}" {{ isset($object) ? ($object->category_id == $category->id ? 'selected': ''): ''}}>{{ $category->title }}</option>
                 @endforeach
         </select>
+        <!-- Error -->
+        @if ($errors->has('category_id'))
+        <div class="error">
+            {{ $errors->first('category_id') }}
+        </div>
+        @endif
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Title</label>
-        <input type="text" class="form-control" name="title" id="exampleInputEmail1" value="{{isset($object) ? $object->title : ''}}" aria-describedby="emailHelp" placeholder="Enter Title" required>
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <input type="text" class="form-control" name="title" id="exampleInputEmail1" value="{{isset($object) ? $object->title : ''}}" aria-describedby="emailHelp" placeholder="Enter Title">
+        <!-- Error -->
+        @if ($errors->has('title'))
+        <div class="error">
+            {{ $errors->first('title') }}
+        </div>
+        @endif
       </div>
        <div class="form-group">
          <label for="exampleInputEmail1">Content</label>
          <textarea class="form-control" name="content" id="summernote" cols="30" rows="6" placeholder="Enter Content">{{isset($object) ? $object->content : ''}}</textarea>
-         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+         <!-- Error -->
+        @if ($errors->has('content'))
+        <div class="error">
+            {{ $errors->first('content') }}
+        </div>
+        @endif
        </div>
-       {{-- <div class="form-group">
-        <label for="exampleInputEmail1">Description</label>
-        <textarea class="form-control" name="description" id="summernote" cols="30" rows="6" placeholder="Enter Description">{{isset($object) ? $object->description : ''}}</textarea>
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-      </div> --}}
       <div class="form-group">
         <label for="exampleInputEmail1">Video Link</label>
-        <input type="url" class="form-control" name="video_link" value="{{isset($object) ? $object->video_link : ''}}" aria-describedby="emailHelp" placeholder="Enter video link" required>
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <input type="url" class="form-control" name="video_link" value="{{isset($object) ? $object->video_link : ''}}" aria-describedby="emailHelp" placeholder="Enter video link">
+        <!-- Error -->
+        @if ($errors->has('video_link'))
+        <div class="error">
+            {{ $errors->first('video_link') }}
+        </div>
+        @endif
       </div>
       <div class="form-group" style="padding-bottom: 15px">
         <label class="col-lg-3">Upload</label>

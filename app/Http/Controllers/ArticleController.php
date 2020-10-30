@@ -63,6 +63,14 @@ class ArticleController extends Controller
      */
     public function store(Request $request, $id = 0)
     {
+        // Form validation
+        $this->validate($request, [
+            'title' => 'required|min:10',
+            'content' => 'required|min:200',
+            'video_link' => 'required',
+            'category_id' => 'required',
+        ]);
+
         $slug = preg_replace('~[^\pL\d]+~u', '-', $request->title);
         $data = [
             'title' => $request->title,

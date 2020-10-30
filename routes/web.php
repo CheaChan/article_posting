@@ -23,12 +23,12 @@ Route::get('/dashboard', 'DashboardController@index');
 // User List
 Route::prefix('admin')->group(function () {
     // dashboard
-    Route::get('/users/lists', 'User\UserController@index');
+    Route::get('/users/lists', 'User\UserController@index')->middleware('is_super_admin');
 
-    Route::get('/users/create', 'User\UserController@create')->name('users/create');
-    Route::get('/users/show/{id?}', 'User\UserController@show')->name('users/show');
-    Route::post('/users/store/{id?}', 'User\UserController@store')->name('users/store');
-    Route::get('/users/delete/{id?}', 'User\UserController@destroy')->name('users/delete');
+    Route::get('/users/create', 'User\UserController@create')->middleware('is_super_admin');
+    Route::get('/users/show/{id?}', 'User\UserController@show')->middleware('is_super_admin');
+    Route::post('/users/store/{id?}', 'User\UserController@store')->middleware('is_super_admin');
+    Route::get('/users/delete/{id?}', 'User\UserController@destroy')->middleware('is_super_admin');
     ////
     Route::get('/category', 'CategoryController@index')->name('category');
     Route::get('/category/create', 'CategoryController@create')->name('category/create');
@@ -62,3 +62,6 @@ Route::get('view/article/detail/{id?}', 'ArticleController@getArticle_detail')->
 // Search Article
 Route::any('articles/search', 'ArticleController@searchArticle')->name('view/article/lists');
 
+Route::get('error/403', function () {
+    return view('errors.error');
+});
