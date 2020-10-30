@@ -38,6 +38,10 @@ class CategoryController extends Controller
      */
     public function store(Request $request, $id = 0)
     {
+        $this->validate($request, [
+            'title' => 'required|min:10',
+            'description' => 'required|min:100',
+        ]);
         $data = [
             'title' => $request->title,
             'description' => $request->description,
